@@ -25,7 +25,7 @@ SECRET_KEY = 'xxqivzresxg42)abv9+!kv0g=xi6gj&#jg0ld!ah@9k@p%c%=5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # apps
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,13 @@ WSGI_APPLICATION = 'SimpleBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # db -> postgresql
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sampledb',
+        'USER': 'youngsoo',
+        'PASSWORD': 'youngsoo',
+        'HOST': 'serverless-test-db-instance.clxdzjtjvwel.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '15420',
     }
 }
 
@@ -118,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# USER_MODEL
+AUTH_USER_MODEL = 'auth.User'
