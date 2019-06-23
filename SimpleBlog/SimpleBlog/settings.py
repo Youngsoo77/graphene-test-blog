@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xxqivzresxg42)abv9+!kv0g=xi6gj&#jg0ld!ah@9k@p%c%=5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -71,21 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SimpleBlog.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        # db -> postgresql
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sampledb',
-        'USER': 'youngsoo',
-        'PASSWORD': 'youngsoo',
-        'HOST': 'serverless-test-db-instance.clxdzjtjvwel.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '15420',
-    }
-}
 
 
 # Password validation
